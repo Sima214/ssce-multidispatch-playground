@@ -1,0 +1,34 @@
+{
+	"Header Guard": {
+		"prefix": "headguard",
+		"scope": "c",
+		"body": [
+			"#ifndef TEMPLATE_${TM_FILENAME/(.*)\\..*/${1:/upcase}/}",
+			"#define TEMPLATE_${TM_FILENAME/(.*)\\..*/${1:/upcase}/}",
+			"/**",
+			" * @file",
+			" * @brief ",
+			" */",
+			"",
+			"#endif /*TEMPLATE_${TM_FILENAME/(.*)\\..*/${1:/upcase}/}*/"
+		],
+	},
+	"Header Guard C++": {
+		"prefix": "headguard",
+		"scope": "cpp",
+		"body": [
+			"#ifndef TEMPLATE_${TM_FILENAME/(.*)\\..*/${1:/upcase}/}_HPP",
+			"#define TEMPLATE_${TM_FILENAME/(.*)\\..*/${1:/upcase}/}_HPP",
+			"/**",
+			" * @file",
+			" * @brief ",
+			" */",
+			"",
+			"namespace example {",
+			"",
+			"}  // namespace template",
+			"",
+			"#endif /*TEMPLATE_${TM_FILENAME/(.*)\\..*/${1:/upcase}/}_HPP*/"
+		],
+	}
+}

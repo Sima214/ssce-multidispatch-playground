@@ -1,0 +1,39 @@
+shallow_clone: true
+
+platform:
+  - x64
+
+configuration:
+  - Debug
+  # - Release (TODO: b_vscrt)
+
+image:
+  - Visual Studio 2019
+
+branches:
+  except:
+    - linux
+    - macos
+
+environment:
+  CI_FTP_SECRET:
+    secure: 1npkW+fDfvILUzeZeY2XTFsblS9hxDjOeqyISCIXzD8=
+
+install:
+  - cmd: call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat" %PLATFORM%
+  - cmd: git submodule update --init --recursive
+
+build_script:
+  - cmd: set CC=clang-cl
+  - cmd: set CXX=clang-cl
+  - cmd: mkdir build
+  - cmd: meson setup build "-Dbuild_tag=%APPVEYOR_BUILD_NUMBER%"
+  - cmd: ninja -v -C build
+  - cmd: ninja -C build test
+  - cmd: ninja -C build ci_upload 
+
+test: off
+
+# Uncomment to enable rdp.
+# on_finish:
+#   - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))

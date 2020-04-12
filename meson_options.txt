@@ -1,0 +1,5 @@
+option('build_tag', type : 'string', value : 'XXX', description : 'Build id. Used for tracking CI builds.')
+option('artifact_address', type : 'string', value : 'ftp.drivehq.com', description : 'Address of ftp server where artifacts are to be uploaded.')
+option('artifact_username', type : 'string', value : 'Sima214', description : 'Username of ftp server.')
+option('artifact_password', type : 'string', value : 'CI_FTP_SECRET', description : 'Password of ftp server.')
+option('artifact_password_env', type : 'boolean', value : true, description: 'Enable this to retreive ftp server password from an environment variable.')

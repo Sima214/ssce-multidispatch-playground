@@ -1,0 +1,45 @@
+stages:
+  - build
+
+clang:
+  stage: build
+  tags:
+    - meson
+    - clang
+  except:
+    - macos
+    - windows
+  variables:
+    CC: clang
+    CXX: clang++
+  before_script:
+    - rm -rf build
+    - git submodule update --init --recursive
+  script:
+    - mkdir build
+    - meson setup build "-Dbuild_tag=${CI_PIPELINE_IID}"
+    - ninja -v -C build
+    - ninja -C build test
+    - ninja -C build ci_upload
+
+
+gcc:
+  stage: build
+  tags:
+    - meson
+    - gcc
+  except:
+    - macos
+    - windows
+  variables:
+    CC: gcc
+    CXX: g++
+  before_script:
+    - rm -rf build
+    - git submodule update --init --recursive
+  script:
+    - mkdir build
+    - meson setup build "-Dbuild_tag=${CI_PIPELINE_IID}"
+    - ninja -v -C build
+    - ninja -C build test
+    - ninja -C build ci_upload 

@@ -3,22 +3,22 @@
 		"prefix": "headguard",
 		"scope": "c",
 		"body": [
-			"#ifndef TEMPLATE_${TM_FILENAME/(.*)\\..*/${1:/upcase}/}",
-			"#define TEMPLATE_${TM_FILENAME/(.*)\\..*/${1:/upcase}/}",
+			"#ifndef MULTIDISPATCH_${TM_FILENAME/(.*)\\..*/${1:/upcase}/}",
+			"#define MULTIDISPATCH_${TM_FILENAME/(.*)\\..*/${1:/upcase}/}",
 			"/**",
 			" * @file",
 			" * @brief ",
 			" */",
 			"",
-			"#endif /*TEMPLATE_${TM_FILENAME/(.*)\\..*/${1:/upcase}/}*/"
+			"#endif /*MULTIDISPATCH_${TM_FILENAME/(.*)\\..*/${1:/upcase}/}*/"
 		],
 	},
 	"Header Guard C++": {
 		"prefix": "headguard",
 		"scope": "cpp",
 		"body": [
-			"#ifndef TEMPLATE_${TM_FILENAME/(.*)\\..*/${1:/upcase}/}_HPP",
-			"#define TEMPLATE_${TM_FILENAME/(.*)\\..*/${1:/upcase}/}_HPP",
+			"#ifndef MULTIDISPATCH_${TM_FILENAME/(.*)\\..*/${1:/upcase}/}_HPP",
+			"#define MULTIDISPATCH_${TM_FILENAME/(.*)\\..*/${1:/upcase}/}_HPP",
 			"/**",
 			" * @file",
 			" * @brief ",
@@ -28,7 +28,7 @@
 			"",
 			"}  // namespace template",
 			"",
-			"#endif /*TEMPLATE_${TM_FILENAME/(.*)\\..*/${1:/upcase}/}_HPP*/"
+			"#endif /*MULTIDISPATCH_${TM_FILENAME/(.*)\\..*/${1:/upcase}/}_HPP*/"
 		],
 	}
 }

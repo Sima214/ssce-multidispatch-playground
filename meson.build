@@ -1,9 +1,9 @@
-project('c_cpp_meson_gitlab_appveyor_travis_ci', ['c', 'cpp'], version: '0.1',
+project('ssce_multidispatch_playground', ['c', 'cpp'], version: '0.1',
         default_options: [
             # Standard version to compile against.
-            'c_std=c99', 'cpp_std=c++11',
+            'c_std=c99', 'cpp_std=c++14',
             # Optimize by default.
-            'buildtype=debugoptimized',
+            'buildtype=release',
             # Extra diagnostic messages.
             'c_args=-Wextra', 'cpp_args=-Wextra',
             # Extra optimizations: Link Time Optimization and no exceptions. 
@@ -52,6 +52,6 @@ subdir('src')
 subdir('test')
 
 # Packager.
-packaged_files = [greeter_lib, greeter_test, tests_logfile]
+packaged_files = [gmv_lib, gmv_test, tests_logfile]
 target_ci_artifact_package = run_target('ci_package', command: artifact_ci_common + artifact_ci_output + packaged_files)
 target_ci_artifact_upload = run_target('ci_upload', command: artifact_ci_common + artifact_ci_ftp + packaged_files)

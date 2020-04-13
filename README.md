@@ -1,8 +1,6 @@
-# C/C++ Meson build system with GitlabCI/AppVeyor/Travis CI
+# Multi-Dispatch Playground
 
-C/C++ library template using the meson build system, with tests, and CI example configurations.
-
-This is used as a build system template for all my other C/C++ projects.
+Finding the best(in terms of execution speed) method to implement multi-dispatch for each platform.
 
 ## Status
 
@@ -17,13 +15,13 @@ This is used as a build system template for all my other C/C++ projects.
 
 \* N/S: Not Supported
 
-[1]: https://travis-ci.org/Sima214/c_cpp_meson_gitlab_appveyor_travis_ci
-[2]: https://gitlab.com/Sima214/c_cpp_meson_gitlab_appveyor_travis_ci/-/commits/master
-[3]: https://ci.appveyor.com/project/Sima214/c-cpp-meson-gitlab-appveyor-travis-ci
+[1]: https://travis-ci.org/Sima214/ssce_multidispatch_playground
+[2]: https://gitlab.com/Sima214/ssce_multidispatch_playground/-/commits/master
+[3]: https://ci.appveyor.com/project/Sima214/ssce-multidispatch-playground
 
-[MacOS Clang amd64 build status]: https://travis-ci.org/Sima214/c_cpp_meson_gitlab_appveyor_travis_ci.svg?branch=master
-[Gitlab CI Status]: https://gitlab.com/Sima214/c_cpp_meson_gitlab_appveyor_travis_ci/badges/master/pipeline.svg
-[Windows Clang amd64 build status]: https://ci.appveyor.com/api/projects/status/igowx5hdvk58yx2h?svg=true
+[MacOS Clang amd64 build status]: https://travis-ci.org/Sima214/ssce_multidispatch_playground.svg?branch=master
+[Gitlab CI Status]: https://gitlab.com/Sima214/ssce_multidispatch_playground/badges/master/pipeline.svg
+[Windows Clang amd64 build status]: https://ci.appveyor.com/api/projects/status/
 
 ## Building
 
